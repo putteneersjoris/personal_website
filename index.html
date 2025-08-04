@@ -1,1 +1,224 @@
-hello this is my new website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joris - Architecture Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23333" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .projects {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            opacity: 0.1;
+            border-radius: 8px;
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .project-info p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .project-meta {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .projects {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>JORIS</h1>
+            <p>Architecture & Design</p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Selected Works</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Urban Residence</h3>
+                    <p>A modern residential complex that blends contemporary design with sustainable living practices.</p>
+                    <div class="project-meta">2024 • Residential</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Cultural Center</h3>
+                    <p>An innovative community space designed to foster cultural exchange and artistic expression.</p>
+                    <div class="project-meta">2023 • Public</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Office Tower</h3>
+                    <p>A 20-story commercial building featuring energy-efficient systems and flexible workspaces.</p>
+                    <div class="project-meta">2023 • Commercial</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Pavilion Series</h3>
+                    <p>A collection of temporary structures exploring the relationship between form and natural environment.</p>
+                    <div class="project-meta">2022 • Installation</div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-info">
+                    <h3>Waterfront Development</h3>
+                    <p>Master planning for a mixed-use development that integrates with the existing coastal landscape.</p>
+                    <div class="project-meta">2022 • Urban Planning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
